@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% if current_user.is_authenticated %}
+        <a> {{ user.name_ }}</a>
+        <a href="/logout">Вийти з акаунту</a>
+    {% else %}
+        <a href="/login">Увійти в акаунт</a>
+    {% endif %}
+    <br />
+    <br />
+    <br />
+    {% for i in games %}
+        <p>{{ i.text }} {{ i.date }}</p>
+        <a href="/post/{{ i.id }}">Переглянути</a>
+    {% endfor %}
+</body>
+</html>
