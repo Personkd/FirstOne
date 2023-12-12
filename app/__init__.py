@@ -23,7 +23,7 @@ login.login_view="login"
 class Userlist(db.Model):
     id = db.Column(db.Integer,primary_key=True)
     name = db.Column(db.String(400), nullable=False)
-    password = db.Column(db.Integer,nullable=False)
+    password = db.Column(db.String,nullable=False)
     age = db.Column(db.Integer,nullable=False)
 
 class Games(db.Model):
