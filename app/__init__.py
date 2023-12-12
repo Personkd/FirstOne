@@ -20,7 +20,7 @@ migrate = Migrate(app, db)
 login=LoginManager(app)
 login.login_view="login"
 
-class Userlist(db.Model):
+class Userlist(db.Model,UserMixin):
     id = db.Column(db.Integer,primary_key=True)
     name = db.Column(db.String(400), nullable=False)
     password = db.Column(db.String,nullable=False)
@@ -64,7 +64,7 @@ def addgame():
         username=adminlogin.username.data
         password=adminlogin.password.data
         admin=Userlist.query.filter_by(name=username).first()
-        if  admin is None or admin.name != username or password != 1234567890:
+        if  admin is None or password != 1234567890:
             return redirect("/addgame")
         else:
             Create = addgame()
