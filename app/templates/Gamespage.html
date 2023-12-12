@@ -15,8 +15,12 @@
     <br />
     <br />
     {% for i in games %}
-        <p>{{ i.text }} {{ i.date }}</p>
-        <a href="/post/{{ i.id }}">Переглянути</a>
+        <img src="{{i.path}}">
+        <p>{{ i.name }}</p>
+        <p>{{ i.description }}</p>
+        <p>{{ i.price }}</p>
+        <p>{{ i.date }}</p>
+        <a href="/game/{{ i.id }}">Додати в кошик</a>
     {% endfor %}
 </body>
 </html>

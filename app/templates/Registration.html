@@ -6,7 +6,7 @@
 </head>
 <body>
     <form method="post">
-            {{ form.hidden_tag() }}
+            {{ registration.hidden_tag() }}
             <p> {{registration.password.label }} {{registration.password(size=40)}}</p>
             <p> {{registration.name.label }} {{registration.name(size=40)}}</p>
             <p> {{registration.age.label }} {{registration.age(size=40)}}</p>

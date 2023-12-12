@@ -17,8 +17,20 @@ class Login(FlaskForm):
     remember = BooleanField("Remember me")
     button = SubmitField('Enter')
 
-class Adminlogin(FlaskForm):
+class Login(FlaskForm):
     username = StringField('Username', validators=[DataRequired()])
     password = StringField('Password', validators=[DataRequired()])
     remember = BooleanField("Remember me")
+    button = SubmitField('Enter')
+
+class adminLogincheck(FlaskForm):
+    username = StringField('Username', validators=[DataRequired()])
+    password =  StringField('Password', validators=[DataRequired()])
+    button = SubmitField('Enter')
+
+class addgame(FlaskForm):
+    name = StringField('Username', validators=[DataRequired()])
+    description =  StringField('Password', validators=[DataRequired()])
+    price = IntegerField('Price', validators=[DataRequired()])
+    image =  StringField('Password', validators=[DataRequired()])
     button = SubmitField('Enter')

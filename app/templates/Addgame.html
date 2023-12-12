@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post">
+            {{ adminlogin.hidden_tag() }}
+            <p> {{adminlogin.username.label }} {{adminlogin.username(size=40)}}</p>
+            <p> {{adminlogin.password.label }} {{adminlogin.password(size=40)}}</p>
+            {{ adminlogin.button() }}
+    </form>
+</body>
+</html>
