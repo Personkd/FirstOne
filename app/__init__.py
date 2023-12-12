@@ -24,7 +24,7 @@ class Userlist(db.Model):
     id = db.Column(db.Integer,primary_key=True)
     name = db.Column(db.String(400), nullable=False)
     password = db.Column(db.Integer,nullable=False)
-    age= db.Column(db.Integer,nullable=False)
+    age = db.Column(db.Integer,nullable=False)
 
 class Games(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -40,12 +40,12 @@ def user_loader(id):
 
 @app.route("/registration", methods=["GET", "POST"])
 def page_1():
-    registration=Register()
+    registration =Register()
     if registration.validate_on_submit():
         password = registration.password.data
         name = registration.name.data
         age = registration.age.data
-        user=Userlist(name=name,password=password,age=age)
+        user =Userlist(name=name,password=password,age=age)
         db.session.add(user)
         db.session.commit()
         return render_template("Registration.html",password=password,name=name,age=age,registration=registration)
