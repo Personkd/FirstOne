@@ -28,7 +28,7 @@ class adminLogincheck(FlaskForm):
     password =  StringField('Password', validators=[DataRequired()])
     button = SubmitField('Enter')
 
-class addgame(FlaskForm):
+class Addgame(FlaskForm):
     name = StringField('Username', validators=[DataRequired()])
     description =  StringField('Password', validators=[DataRequired()])
     price = IntegerField('Price', validators=[DataRequired()])

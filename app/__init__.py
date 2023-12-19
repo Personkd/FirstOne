@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, redirect
-from .Classes import Register,Login,Login,adminLogincheck,addgame
+from .Classes import Register,Login,Login,adminLogincheck,Addgame
 from flask_sqlalchemy import  SQLAlchemy
 from  flask_migrate import Migrate
 from flask_login import LoginManager, UserMixin, login_user,logout_user,current_user,login_required
@@ -64,15 +64,15 @@ def addgame():
         username=adminlogin.username.data
         password=adminlogin.password.data
         admin=Userlist.query.filter_by(name=username).first()
-        if  admin is None or password != 1234567890:
+        if  admin is None or password != "1234567890":
             return redirect("/addgame")
         else:
-            Create = addgame()
+            Create =Addgame()
             if Create.validate_on_submit():
-                Name =addgame.name.data
-                Description = addgame.description.data
-                Price = addgame.price.data
-                Path = addgame.image.data
+                Name =Create.name.data
+                Description = Create.description.data
+                Price = Create.price.data
+                Path = Create.image.data
                 game = Games(name=Name,description=Description,price=Price,path=Path)
                 db.session.add(game)
                 db.session.commit()
